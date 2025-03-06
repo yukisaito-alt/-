@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>東京タワーで忍者・侍体験 インフォグラフィック</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Yomogi&family=Zen+Kurenaido&display=swap');
+    
+    :root {
+      --fashion-1: #593C47;
+      --fashion-2: #F2E63D;
+      --fashion-3: #F2C53D;
+      --fashion-4: #F25C05;
+      --fashion-5: #F24405;
+      --light-bg: #FDF6F0;
+      --text-main: #334155;
+      --text-heading: #1e40af;
+      --text-subheading: #475569;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Zen Kurenaido', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-main);
+      line-height: 1.4;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 30px;
+      border-bottom: 3px solid var(--fashion-3);
+      padding-bottom: 20px;
+      position: relative;
+    }
+    
+    .title-area {
+      width: 70%;
+    }
+    
+    h1 {
+      font-family: 'Kaisei Decol', serif;
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      position: relative;
+      display: inline-block;
+      background: linear-gradient(45deg, var(--fashion-1), var(--fashion-5));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding-right: 40px;
+    }
+    
+    h1::after {
+      content: "✨";
+      position: absolute;
+      right: 0;
+      top: 0;
+      -webkit-text-fill-color: var(--fashion-3);
+    }
+    
+    .subtitle {
+      font-size: 16px;
+      color: var(--text-subheading);
+      max-width: 600px;
+    }
+    
+    .date-area {
+      text-align: right;
+      font-size: 14px;
+      color: var(--text-subheading);
+    }
+    
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      position: relative;
+    }
+    
+    .column {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .section {
+      margin-bottom: 25px;
+      position: relative;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 15px;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+    
+    .section:hover {
+      border-color: var(--fashion-3);
+      box-shadow: 0 4px 12px rgba(242, 196, 60, 0.2);
+    }
+    
+    h2 {
+      font-family: 'Kaisei Decol', serif;
+      font-size: 18px;
+      color: var(--text-heading);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+    }
+    
+    h2::before {
+      content: "";
+      width: 100%;
+      height: 8px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8' width='100' height='8'%3E%3Cpath d='M0,4 C20,0 30,8 50,4 C70,0 80,8 100,4' stroke='%23F2C53D' fill='none' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      z-index: -1;
+    }
+    
+    h3 {
+      font-size: 16px;
+      color: var(--fashion-1);
+      margin: 10px 0;
+      font-family: 'Yomogi', cursive;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h3::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 4' width='100' height='4'%3E%3Cpath d='M0,2 C10,1 20,3 30,2 C40,1 50,3 60,2 C70,1 80,3 90,2 C100,1' stroke='%23F25C05' fill='none' stroke-width='1' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
+    }
+    
+    ul {
+      list-style-type: none;
+      margin-left: 10px;
+    }
+    
+    li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 8px;
+    }
+    
+    li::before {
+      content: "•";
+      color: var(--fashion-4);
+      font-size: 18px;
+      position: absolute;
+      left: 0;
+      top: -2px;
+    }
+    
+    .highlight {
+      font-weight: bold;
+      background: linear-gradient(transparent 70%, var(--fashion-2) 70%);
+      padding: 0 2px;
+    }
+    
+    .tag {
+      display: inline-block;
+      background-color: var(--fashion-2);
+      color: var(--fashion-1);
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-right: 5px;
+      transform: rotate(-2deg);
+    }
+    
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-left: 4px solid var(--fashion-4);
+      position: relative;
+    }
+    
+    .card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30px;
+      height: 30px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' width='30' height='30'%3E%3Cpath d='M0,0 L30,0 L30,30 Z' fill='%23F2C53D'/%3E%3C/svg%3E") no-repeat;
+    }
+    
+    .icon {
+      font-size: 20px;
+      margin-right: 5px;
+      display: inline-block;
+    }
+    
+    .arrow {
+      display: inline-block;
+      width: 30px;
+      height: 20px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 20' width='50' height='20'%3E%3Cpath d='M0,10 L40,10 M30,2 L40,10 L30,18' stroke='%23F25C05' fill='none' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat;
+      margin: 0 5px;
+    }
+    
+    .note {
+      font-size: 13px;
+      padding: 10px;
+      background-color: rgba(242, 230, 60, 0.2);
+      border-radius: 8px;
+      margin: 10px 0;
+      position: relative;
+    }
+    
+    .note::before {
+      content: "💡";
+      margin-right: 5px;
+    }
+    
+    .bubble {
+      position: relative;
+      background: white;
+      border-radius: 20px;
+      padding: 10px 15px;
+      border: 2px dashed var(--fashion-3);
+      margin: 15px 0;
+      max-width: 80%;
+    }
+    
+    .bubble::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 20px;
+      width: 20px;
+      height: 10px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 10' width='20' height='10'%3E%3Cpath d='M0,0 C10,10 15,10 20,0' stroke='%23F2C53D' fill='white' stroke-width='2' stroke-dasharray='4,2'/%3E%3C/svg%3E") no-repeat;
+    }
+    
+    .hand-drawn-box {
+      position: relative;
+      padding: 15px;
+      margin: 15px 0;
+    }
+    
+    .hand-drawn-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 2px solid var(--fashion-5);
+      border-radius: 15px;
+      transform: rotate(-0.5deg);
+      z-index: -1;
+    }
+    
+    .hand-drawn-box::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      right: 3px;
+      bottom: 3px;
+      border: 1px dashed var(--fashion-3);
+      border-radius: 12px;
+      transform: rotate(0.5deg);
+      z-index: -1;
+    }
+    
+    .badge {
+      background-color: var(--fashion-5);
+      color: white;
+      font-size: 14px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      display: inline-block;
+      transform: rotate(-3deg);
+      margin-right: 10px;
+    }
+    
+    .dotted-line {
+      border-top: 2px dotted var(--fashion-3);
+      margin: 15px 0;
+    }
+    
+    footer {
+      margin-top: 30px;
+      font-size: 12px;
+      color: var(--text-subheading);
+      text-align: center;
+      padding-top: 15px;
+      border-top: 2px solid var(--fashion-2);
+    }
+    
+    /* Hand-drawn decorative elements */
+    .decoration {
+      position: absolute;
+      opacity: 0.2;
+      z-index: -1;
+    }
+    
+    .deco-1 {
+      top: 50px;
+      right: 50px;
+      transform: rotate(20deg);
+      font-size: 60px;
+    }
+    
+    .deco-2 {
+      bottom: 80px;
+      left: 40px;
+      transform: rotate(-15deg);
+      font-size: 50px;
+    }
+    
+    .deco-3 {
+      top: 300px;
+      right: 100px;
+      transform: rotate(-10deg);
+      font-size: 40px;
+    }
+    
+    /* Flowchart styles */
+    .flow {
+      display: flex;
+      align-items: center;
+      margin: 15px 0;
+      flex-wrap: wrap;
+    }
+    
+    .flow-item {
+      position: relative;
+      padding: 8px 15px;
+      background: white;
+      border: 2px solid var(--fashion-3);
+      border-radius: 8px;
+      margin-right: 30px;
+      margin-bottom: 10px;
+    }
+    
+    .flow-item::after {
+      content: "→";
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--fashion-4);
+      font-size: 16px;
+    }
+    
+    .flow-item:last-child::after {
+      display: none;
+    }
+    
+    /* Tower illustration */
+    .tower-illustration {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      width: 100px;
+      height: 150px;
+      opacity: 0.8;
+    }
+    
+    .tower-top {
+      width: 30px;
+      height: 40px;
+      background-color: var(--fashion-5);
+      border-radius: 15px 15px 0 0;
+      margin: 0 auto;
+    }
+    
+    .tower-middle {
+      width: 60px;
+      height: 60px;
+      background-color: var(--fashion-4);
+      margin: -5px auto;
+      position: relative;
+      z-index: -1;
+    }
+    
+    .tower-bottom {
+      width: 80px;
+      height: 70px;
+      background-color: var(--fashion-3);
+      margin: -10px auto;
+      position: relative;
+      z-index: -2;
+      border-radius: 0 0 10px 10px;
+    }
+    
+    .price-tag {
+      display: inline-block;
+      background-color: var(--fashion-2);
+      color: var(--fashion-5);
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-weight: bold;
+      transform: rotate(-2deg);
+      margin: 0 5px;
+    }
+    
+    .background-pattern {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23F2C53D' fill-opacity='0.05'%3E%3Cpath d='M0 0h20v20H0V0zm10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm0-1a6 6 0 1 1 0-12 6 6 0 0 1 0 12z'/%3E%3C/g%3E%3C/svg%3E");
+      z-index: -1;
+    }
+    
+    @media (max-width: 768px) {
+      .column {
+        flex: 100%;
+      }
+      
+      .tower-illustration {
+        display: none;
+      }
+      
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="background-pattern"></div>
+    
+    <!-- Decorative elements -->
+    <div class="decoration deco-1">🏯</div>
+    <div class="decoration deco-2">🥷</div>
+    <div class="decoration deco-3">⚔️</div>
+    
+    <header>
+      <div class="title-area">
+        <h1>東京タワーで忍者・侍体験 ミニドラマ撮影サービス</h1>
+        <p class="subtitle">訪日外国人向け｜体験型エンターテイメント✕日本文化｜高付加価値ビジネスコンセプト</p>
+      </div>
+      <div class="date-area">
+        2025年3月作成
+        <div class="tower-illustration">
+          <div class="tower-top"></div>
+          <div class="tower-middle"></div>
+          <div class="tower-bottom"></div>
+        </div>
+      </div>
+    </header>
+    
+    <div class="content">
+      <div class="column">
+        <div class="section">
+          <h2>🏯 ビジネスコンセプト</h2>
+          
+          <div class="card">
+            <h3>体験型×エンターテイメント×日本文化</h3>
+            <ul>
+              <li><span class="highlight">忍者や侍</span>など、海外観光客に人気の日本文化を"コスプレ+演技"で体感できるサービス</li>
+              <li>写真撮影だけでなく<span class="highlight">脚本付きで演技</span>を行い、「日本の時代劇の世界」に没入できる</li>
+              <li><span class="highlight">東京タワー</span>という"有名ランドマーク"を活用し、訪日外国人の基本ニーズとマッチ</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>ミニドラマ撮影の特別感</h3>
+            <ul>
+              <li>5分程度の「<span class="highlight">自分が主役級で出演</span>してストーリーがある映像」が得られる</li>
+              <li>経験を<span class="highlight">SNSや動画プラットフォーム</span>でシェアしたい需要が高い外国人観光客に魅力的</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>高付加価値×少人数制でプレミアム感</h3>
+            <ul>
+              <li>価格は<span class="price-tag">1本40万円</span>（5名まで）、5人以上で追加料金が発生</li>
+              <li><span class="highlight">1日3組まで</span>の限定感によりプレミアムサービスとして打ち出せる</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h2>👥 ターゲット分析</h2>
+          
+          <div class="bubble">
+            <h3>訪日観光客（個人/グループ旅行）</h3>
+            <ul>
+              <li>「<span class="highlight">特別な体験</span>」に投資する意欲が高い層</li>
+              <li>アジア圏（中国・台湾・韓国・香港・シンガポール）や欧米・豪州に潜在需要あり</li>
+            </ul>
+          </div>
+          
+          <div class="bubble">
+            <h3>インセンティブツアーや企業イベント</h3>
+            <ul>
+              <li>企業の<span class="highlight">チームビルディングや特別報奨</span>として利用可能</li>
+              <li>東京タワーという知名度の高いロケーションは海外企業にも魅力的</li>
+            </ul>
+          </div>
+          
+          <div class="bubble">
+            <h3>ウェディングやパーティと組み合わせ</h3>
+            <ul>
+              <li>外国人カップルの「<span class="highlight">ユニークな結婚式前撮り</span>」としての需要</li>
+              <li>サムライや忍者衣装を取り入れた"ジャパニーズ・フォトウェディング"の発展形</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h2>🎬 サービス概要とフロー</h2>
+          
+          <div class="flow">
+            <div class="flow-item">
+              シナリオ選択
+            </div>
+            <div class="flow-item">
+              衣装・メイク
+            </div>
+            <div class="flow-item">
+              リハーサル
+            </div>
+            <div class="flow-item">
+              撮影
+            </div>
+            <div class="flow-item">
+              編集・納品
+            </div>
+          </div>
+          
+          <div class="hand-drawn-box">
+            <h3>シナリオ（5パターン）</h3>
+            <ul>
+              <li>忍者アクション、侍の一騎打ち、姫救出、江戸の町人コメディ、SF×サムライなど</li>
+              <li>言語対応：英語、中国語など（テロップ・吹替対応）</li>
+            </ul>
+          </div>
+          
+          <div class="hand-drawn-box">
+            <h3>撮影・納品</h3>
+            <ul>
+              <li>東京タワーのホールをメインセットとし、複数の撮影場所を用意</li>
+              <li>5分完結のストーリーで短いカットを編集</li>
+              <li>1週間程度でデータ送信。SNS用ショートバージョンも提供</li>
+            </ul>
+          </div>
+          
+          <div class="note">
+            <span class="badge">料金</span> 基本プラン：40万円（5名まで）<br>
+            <span class="badge">追加</span> 5名以上は1名追加ごとに5万円<br>
+            <span class="badge">稼働</span> 1日3組まで → 最大120万円/日の売上
+          </div>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="section">
+          <h2>🔍 競合と差別化ポイント</h2>
+          
+          <div class="card">
+            <h3>競合例</h3>
+            <ul>
+              <li>浅草周辺の着物レンタル＋町歩き、忍者体験道場など</li>
+              <li>"写真"の撮影サービスやVR体験などは散見されるが、<span class="highlight">ドラマ撮影形式は少ない</span></li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>差別化の要点</h3>
+            <ul>
+              <li><span class="tag">唯一無二</span> 「短編映画体験」という独自コンセプト</li>
+              <li><span class="tag">ロケーション</span> 東京タワー（知名度抜群・交通アクセス良好）</li>
+              <li><span class="tag">充実度</span> 衣装＆アクション＆動画編集がセット</li>
+              <li><span class="tag">プレミアム</span> 高価格帯かつ少人数制で特別感を重視</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h2>📣 マーケティング施策</h2>
+          
+          <div class="hand-drawn-box">
+            <h3>オンライン施策</h3>
+            <ul>
+              <li>多言語対応の公式サイトとSNS（Instagram, TikTok, YouTubeなど）</li>
+              <li>OTA（Viator, Klook, Expediaなど）への商品登録</li>
+              <li>TripAdvisorなど海外向け口コミサイトへの掲載・レビュー獲得</li>
+              <li><span class="highlight">インフルエンサーマーケティング</span>：海外在住の著名インフルエンサーを無料招待</li>
+            </ul>
+          </div>
+          
+          <div class="hand-drawn-box">
+            <h3>オフライン施策</h3>
+            <ul>
+              <li>海外旅行博や国際旅行見本市（ITB, WTMなど）への出展・PR</li>
+              <li>日本政府観光局（JNTO）や東京都の観光プロモーション事業との連携</li>
+              <li>東京タワー内や近隣のホテル、旅行代理店への紹介・チラシ設置</li>
+            </ul>
+          </div>
+          
+          <div class="note">
+            <h3>顧客満足度施策</h3>
+            <ul>
+              <li>体験後に写真撮影ブースを設置して<span class="highlight">SNS投稿を促進</span></li>
+              <li>「最高の思い出を作る体験」という演出を徹底。メイキング映像の特典配布も</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h2>💰 収益シミュレーション</h2>
+          
+          <div class="card">
+            <ul>
+              <li>1日3組 × 40万円 = <span class="highlight">120万円/日</span></li>
+              <li>月間営業30日で <span class="highlight">3,600万円/月</span> の売上（理論値）</li>
+              <li>人件費や会場費、広告費を差し引いても、予約率次第で十分な利益確保可能</li>
+            </ul>
+          </div>
+          
+          <div class="dotted-line"></div>
+          
+          <h3>ランニングコスト</h3>
+          <ul>
+            <li>会場賃借料・光熱費等</li>
+            <li>人件費（出演スタッフ・撮影クルー・通訳）</li>
+            <li>備品メンテナンス（衣装クリーニング、機材更新費）</li>
+            <li>広告宣伝費（オンライン広告、インフルエンサー招待費用など）</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="section">
+          <h2>🚀 将来的な展開・拡張案</h2>
+          
+          <div class="bubble">
+            <h3>新しいロケ地への展開</h3>
+            <ul>
+              <li>スカイツリー、浅草寺、皇居外苑、大阪城、京都（二条城など）にも拡大</li>
+              <li>地方連携：名古屋城（武将隊とのコラボ）や姫路城、金沢の兼六園など</li>
+            </ul>
+          </div>
+          
+          <div class="bubble">
+            <h3>他テーマ・コンテンツ追加</h3>
+            <ul>
+              <li>浮世絵や歌舞伎風の映像撮影プラン、忍者アクションをグレードアップ</li>
+              <li>アニメ・ゲームのコスプレ体験（版権要調整）とのコラボプラン</li>
+            </ul>
+          </div>
+          
+          <div class="bubble">
+            <h3>オンライン連動・フォトウェディング</h3>
+            <ul>
+              <li>撮影したドラマをVR/ARコンテンツ化して自宅でも楽しめるサービス</li>
+              <li>結婚式や記念日の前撮りプランとしても訴求。ドラマ仕立てのウェディングビデオ</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h2>⚠️ リスクと対策</h2>
+          
+          <div class="card">
+            <h3>外国語対応の課題</h3>
+            <ul>
+              <li><span class="highlight">多言語でのスムーズなコミュニケーション</span>が鍵</li>
+              <li>通訳や翻訳ツールを整備。スタッフの語学研修、多言語台本の準備</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>価格への抵抗感</h3>
+            <ul>
+              <li>40万円という高価格に見合う"<span class="highlight">特別感</span>"を徹底的に演出</li>
+              <li>SNSでの拡散や口コミでの高評価を獲得し、「一生に一度」の体験と訴求</li>
+              <li>法人・ハネムーンなど高価格帯を許容するターゲットへの訴求を強化</li>
+            </ul>
+          </div>
+          
+          <div class
